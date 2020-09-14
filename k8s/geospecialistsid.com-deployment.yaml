@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geospecialistsid-deployment
+  labels:
+    app: geospecialistsid
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: geospecialistsid
+  template:
+    metadata:
+      labels:
+        app: geospecialistsid
+    spec:
+      containers:
+      - name: geospecialistsid
+        image: jturpin/geospecialistsid:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
