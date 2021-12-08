@@ -27,6 +27,13 @@ spec:
             port: 80
           initialDelaySeconds: 10
           periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            scheme: HTTPS
+            path: /index.html
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 5
         resources:
           requests:
             memory: "64Mi"
