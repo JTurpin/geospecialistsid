@@ -5,6 +5,8 @@ metadata:
   namespace: default
 spec:
   type: LoadBalancer
+  loadBalancerSourceRanges:
+    - 0.0.0.0/0
   ports:
   - name: http
     port: 80
